@@ -15,41 +15,66 @@
         ga('send', 'pageview');
 
     </script>
+    <script src="js/knockout-3.3.0.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="container center">
         <div>
-            <img src="images/MeshedSolutions_Logo.png">
+            <img src="images/MeshedSolutions_Logo.png" height="50%" width="50%">
         </div>
-        <div>
-            <p>
-                We are currently recovering from having an absolutely<br/>
-                terrible web page. The monkey hired to build the site has<br/>
-                been returned and we are working on a new site as we speak.
-            </p>
-            <p>
-                In the mean time, please feel free to contact us:
 
-                <table class="table-center">
-                    <tr>
-                        <td style="text-align: right">
-                            Email:
-                        </td>
-                        <td style="text-align: left; padding-left: 3px;">
-                            <a href="mailto:markbrown@meshedsolutions.com">markbrown@meshedsolutions.com</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: right">
-                            Phone:
-                        </td>
-                        <td style="text-align: left; padding-left: 3px;">
-                            (904) 385-8134
-                        </td>
-                    </tr>
-                </table>
-            </p>
+        <div class="center" style="margin-bottom: 20px">
+            <a href="#" class="btn btn-default" data-bind="click: goToServices">Services</a>
+            <a href="#" class="btn btn-default" data-bind="click: goToProducts">Products</a>
+            <a href="#" class="btn btn-default" data-bind="click: goToContactUs">Contact Us</a>
+        </div>
+
+        <div data-bind="visible: servicesVisible">
+            We offer mobile application development services for companies looking to develop their mobile strategy.
+        </div>
+        <div data-bind="visible: productsVisible">
+            <p>We are currently developing two new products.
+            This section will be updated as the progress continues.</p>
+        </div>
+        <div data-bind="visible: contactUsVisible">
+            <div class="row">
+                Email: <a href="mailto:sales@meshedsolutions.com">sales@meshedsolutions.com</a>
+            </div>
+            <div class="row">
+                Phone: (904) 385-8134
+            </div>
         </div>
     </div>
+
+    <script src="js/bootstrap.js" type="javascript"></script>
+    <script>
+        function ViewModel() {
+            var self = this;
+            self.servicesVisible = ko.observable(true);
+            self.productsVisible = ko.observable();
+            self.contactUsVisible = ko.observable();
+
+            self.goToServices = function(){
+                self.servicesVisible(true);
+                self.productsVisible(false);
+                self.contactUsVisible(false);
+            };
+
+            self.goToProducts = function() {
+                self.servicesVisible(false);
+                self.productsVisible(true);
+                self.contactUsVisible(false);
+            };
+
+            self.goToContactUs = function() {
+                self.servicesVisible(false);
+                self.productsVisible(false);
+                self.contactUsVisible(true);
+            };
+        }
+
+        ko.applyBindings(new ViewModel());
+    </script>
 </body>
 </html>
+

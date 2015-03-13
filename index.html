@@ -19,17 +19,21 @@
 </head>
 <body>
     <div class="container center">
-        <div>
-            <img src="images/MeshedSolutions_Logo.png" height="50%" width="50%">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="images/MeshedSolutions_Logo.png" class="img-responsive" min-height="50%" min-width="50%">
+            </div>
         </div>
 
-        <div class="center" style="margin-bottom: 20px">
-            <a href="#" class="btn btn-default" data-bind="click: goToServices">Services</a>
-            <a href="#" class="btn btn-default" data-bind="click: goToProducts">Products</a>
-            <a href="#" class="btn btn-default" data-bind="click: goToContactUs">Contact Us</a>
+        <div class="center row" style="margin-bottom: 20px">
+            <div class="col-sm-12">
+                <a href="#" class="btn btn-default btn-lg" data-bind="click: goToServices">Services</a>
+                <a href="#" class="btn btn-default btn-lg" data-bind="click: goToProducts">Products</a>
+                <a href="#" class="btn btn-default btn-lg" data-bind="click: goToContactUs">Contact Us</a>
+            </div>
         </div>
 
-        <div data-bind="visible: servicesVisible">
+        <div class="center" data-bind="visible: servicesVisible">
             We develop mobile applications for Android and iOS devices, including tablets and phones.
             We specifically target small to medium sized businesses looking to create or expand their
             mobile strategies and to stay in touch with their customers. Our main goal is to drive down

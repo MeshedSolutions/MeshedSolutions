@@ -18,20 +18,21 @@
     <script src="js/knockout-3.3.0.js" type="text/javascript"></script>
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-header" href="#"><img src="images/MeshedSolutions_Logo.png" width="20%" height="20%"></a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-bind="click: goToServices">Services</a></li>
-                <li><a href="#" data-bind="click: goToProducts">Products</a></li>
-                <li><a href="#" data-bind="click: goToContactUs">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container center">
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="images/MeshedSolutions_Logo.png" class="img-responsive" min-height="50%" min-width="50%">
+            </div>
+        </div>
+
+        <div class="center row" style="margin-bottom: 20px">
+            <div class="col-sm-12">
+                <a href="#" class="btn btn-default btn-lg" data-bind="click: goToServices">Services</a>
+                <a href="#" class="btn btn-default btn-lg" data-bind="click: goToProducts">Products</a>
+                <a href="#" class="btn btn-default btn-lg" data-bind="click: goToContactUs">Contact Us</a>
+            </div>
+        </div>
+
         <div class="center" data-bind="visible: servicesVisible">
             We develop mobile applications for Android and iOS devices, including tablets and phones.
             We specifically target small to medium sized businesses looking to create or expand their
